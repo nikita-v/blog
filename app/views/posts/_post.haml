@@ -1,0 +1,21 @@
+%div[post]
+  - if full?
+    %h1= post.title
+  - else
+    %h1= link_to post.title, post
+  = simple_format post.short_body
+  - if full?
+    = simple_format post.full_body
+  .info
+    .avatar{style: "background: url(#{post.user.gravatar_url}) no-repeat;"}
+    .text
+      = post.user.name
+      |
+      = l post.created_at, format: :long
+      - if !current_user.nil? && current_user.can_update?(post)
+        |
+        = link_to t('.edit'), edit_post_path(post)
+      - if !current_user.nil? && current_user.can_delete?(post)
+        |
+        = link_to t('.delete'), post, method: :delete, data: {confirm: t('.are_you_sure')}
+%hr

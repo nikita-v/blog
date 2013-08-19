@@ -1,0 +1,14 @@
+= form_for @post, html: { class: 'forms forms-columnar'} do |f|
+  %fieldset
+    %legend= title
+    %p
+      = f.label :title
+      = f.text_field :title,  class: 'width-100'
+    %p
+      = f.label :short_body
+      = f.text_area :short_body,  class: 'width-100'
+    %p
+      = f.label :full_body
+      = f.text_area :full_body,  class: 'width-100'
+    %p
+      = f.submit

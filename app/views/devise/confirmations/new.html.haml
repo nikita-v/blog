@@ -1,0 +1,9 @@
+= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post, class: 'forms forms-columnar'}) do |f|
+  = devise_error_messages!
+  %fieldset
+    %legend= t '.resend_confirmation_instructions'
+    %p
+      = f.label :email
+      = f.email_field :email, autofocus: true, class: 'width-100'
+    %p= f.submit t '.resend_confirmation_instructions'
+    %p= render 'devise/shared/links'

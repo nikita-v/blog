@@ -1,0 +1,52 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require kube
+ *= require_tree .
+ */
+
+ $body_width: 700px;
+ $avatar_size: 64px;
+
+ .wrapper {
+  margin: 0 auto;
+  max-width: $body_width;
+  padding-top: 10px;
+ }
+
+ .info {
+  height: $avatar_size;
+  .avatar {
+    display: inline-block;
+    float: left;
+    height: $avatar_size;
+    width: $avatar_size;
+    border-radius: $avatar_size / 2;
+    -webkit-border-radius: $avatar_size / 2;
+    -moz-border-radius: $avatar_size / 2;
+    background: url(http://www.gravatar.com/avatar/37e6c4b46236aee8e0dd1989eb735f56.png?s=64) no-repeat;
+    box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+    -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+    -moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+  }
+
+  .text {
+    display: inline-block;
+    line-height: $avatar_size;
+    margin-left: 10px;
+  }
+ }
+
+ .comment{
+  .text {
+    margin-top: 10px;
+  }
+ }

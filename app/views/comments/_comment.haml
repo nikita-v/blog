@@ -1,0 +1,13 @@
+%div[comment]
+  .info
+    .avatar{style: "background: url(#{comment.user.gravatar_url}) no-repeat;"}
+    .text
+      = comment.user.name
+      |
+      = l comment.created_at, format: :long
+      - if !current_user.nil? && current_user.can_delete?(comment)
+        |
+        = link_to t('posts.post.delete'), post_comment_path(@post, comment), method: :delete, data: {confirm: t('posts.post.are_you_sure')}
+  .text
+    = simple_format comment.text
+%hr

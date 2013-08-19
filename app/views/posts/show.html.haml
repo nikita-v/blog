@@ -1,0 +1,6 @@
+- title @post.title
+= render @post
+%h3= t '.comments'
+= render @post.comments
+- if user_signed_in?
+  = render partial: 'comments/form', locals: {post: @post}

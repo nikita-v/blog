@@ -1,0 +1,18 @@
+= devise_error_messages!
+= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: 'forms forms-columnar'}) do |f|
+  %fieldset
+    %legend= t '.sign_up'
+    %p
+      = f.label :name
+      = f.text_field :name, autofocus: true, class: 'width-100'
+    %p
+      = f.label :email
+      = f.email_field :email, class: 'width-100'
+    %p
+      = f.label :password
+      = f.password_field :password, class: 'width-100'
+    %p
+      = f.label :password_confirmation
+      = f.password_field :password_confirmation, class: 'width-100'
+    %p= f.submit t '.sign_up'
+    %p= render 'devise/shared/links'
